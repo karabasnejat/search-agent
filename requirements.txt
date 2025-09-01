@@ -1,0 +1,32 @@
+# Tavily API client for web content extraction
+tavily-python==0.3.3
+
+# OpenAI API client for GPT-4O
+openai==0.28.1
+
+# Date and time manipulation (built-in, but listed for clarity)
+# datetime - built-in module
+
+# JSON handling (built-in, but listed for clarity)  
+# json - built-in module
+
+# Regular expressions (built-in, but listed for clarity)
+# re - built-in module
+
+# Optional: For better date parsing if needed
+python-dateutil==2.8.2
+
+# Optional: For HTTP requests if manual API calls needed
+requests==2.31.0
+
+# Optional: For environment variable management
+python-dotenv==1.0.0
+
+# Optional: For logging
+colorlog==6.7.0
+
+# Optional: For data manipulation if needed
+pandas==2.0.3
+
+# Optional: For better error handling and retries
+tenacity==8.2.3
