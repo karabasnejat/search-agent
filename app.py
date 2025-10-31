@@ -1,3 +1,23 @@
+"""
+🧩 AI Researcher & Bulletin Writer Multi-Agent System
+
+Bu sistem, haftalık AI bülteni üretmek için tasarlanmıştır.
+İki ajanlı bir mimari kullanır:
+
+1. Researcher Agent: Tavily API kullanarak belirli domainlerde AI haberlerini araştırır
+2. Bulletin Writer Agent: GPT-4O kullanarak Türkçe haftalık bülten oluşturur
+
+Kaynak Domainler (updated):
+- techcrunch.com, venturebeat.com, theverge.com, wired.com, semafor.com
+- openai.com/blog, anthropic.com/news, google.ai/blog, meta.ai/news
+- huggingface.co/blog, microsoft.com/blog, nvidia.com/newsroom
+- stability.ai/blog, midjourney.com, deepmind.google
+- artificialintelligence-news.com
+- donanimhaber.com/yapay-zeka
+
+Detaylı prompt spesifikasyonu için dokümantasyona bakınız.
+"""
+
 from tavily import TavilyClient
 import openai
 from datetime import datetime, timedelta
@@ -290,15 +310,25 @@ def main():
         end_date = datetime.now().strftime("%d %B %Y")  # Bugünün tarihini kullan
         print(f"Varsayılan tarih kullanılıyor: {end_date}")
     
-    # Aranacak domainler - daha fazla kaynak eklendi
+    # Aranacak domainler - güncellenmiş liste (AI Researcher & Bulletin Writer Prompt'a göre)
     target_domains = [
-        "donanimhaber.com/yapay-zeka", 
-        "artificialintelligence-news.com",
         "techcrunch.com",
         "venturebeat.com",
         "theverge.com",
         "wired.com",
-        "arstechnica.com"
+        "semafor.com",
+        "openai.com/blog",
+        "anthropic.com/news",
+        "google.ai/blog",
+        "meta.ai/news",
+        "huggingface.co/blog",
+        "microsoft.com/blog",
+        "nvidia.com/newsroom",
+        "stability.ai/blog",
+        "midjourney.com",
+        "deepmind.google",
+        "artificialintelligence-news.com",
+        "donanimhaber.com/yapay-zeka"
     ]
     
     print(f"\nBülten oluşturuluyor: {end_date}")
